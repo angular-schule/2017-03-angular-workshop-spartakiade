@@ -13,5 +13,7 @@
     <button
       [disabled]="!rateDownAllowed"
       (click)="rateDown()" class="btn btn-default btn-primary">-</button>
+
+    <a [routerLink]="['/book', book.isbn]" class="btn btn-default">Details</a>
   </div>
 </div>
