@@ -1,5 +1,5 @@
 import { Book } from './../shared/book';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-book',
@@ -9,6 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class BookComponent implements OnInit {
 
   @Input() book: Book;
+  @Output() rated = new EventEmitter<Book>();
 
   constructor() { }
 
@@ -16,12 +17,13 @@ export class BookComponent implements OnInit {
   }
 
   rateUp() {
-    console.log('Buch wurde bewertet!');
     this.book.rateUp();
+    this.rated.emit(this.book);
   }
 
   rateDown() {
     this.book.rateDown();
+    this.rated.emit(this.book);
   }
 
   get rateUpAllowed() {

@@ -1,4 +1,6 @@
 <app-book
   *ngFor="let myBook of books"
-  [book]="myBook">
+  [book]="myBook"
+  (rated)="reorderBooks()"
+  >
 </app-book>
