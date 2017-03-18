@@ -1,4 +1,8 @@
-<h2>{{ book.title }} - {{ book.rating }}</h2>
-<p>{{ book.description }}</p>
+<div class="well">
+    <div class="thumbnail pull-right">
+      <img src="//gravatar.com/avatar/{{book.rating}}?s=80&default=wavatar">
+    </div>
 
-<hr>
+  <h2>{{ book.title }} - {{ book.rating }}</h2>
+  <p>{{ book.description }}</p>
+</div>
