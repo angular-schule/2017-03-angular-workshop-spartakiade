@@ -5,4 +5,13 @@
 
   <h2>{{ book.title }} - {{ book.rating }}</h2>
   <p>{{ book.description }}</p>
+
+  <div class="btn-group">
+    <button
+      [disabled]="!rateUpAllowed"
+      (click)="rateUp()" class="btn btn-default btn-danger">+</button>
+    <button
+      [disabled]="!rateDownAllowed"
+      (click)="rateDown()" class="btn btn-default btn-primary">-</button>
+  </div>
 </div>

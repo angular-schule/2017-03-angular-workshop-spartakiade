@@ -15,4 +15,20 @@ export class BookComponent implements OnInit {
   ngOnInit() {
   }
 
+  rateUp() {
+    console.log('Buch wurde bewertet!');
+    this.book.rateUp();
+  }
+
+  rateDown() {
+    this.book.rateDown();
+  }
+
+  get rateUpAllowed() {
+    return this.book.rating < 5;
+  }
+
+  get rateDownAllowed() {
+    return this.book.rating > -1;
+  }
 }
